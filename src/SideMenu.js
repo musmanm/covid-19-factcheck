@@ -98,7 +98,18 @@ export default function PersistentDrawerLeft() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+  const handlePage = (index) => {
+    console.log(index);
+    if(index === 0){
+      window.location.href = 'graph.html';
+    }
+    else{
+      setPage(index);
+    }
+    setPage(index);
+    
+  }
+    
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -140,7 +151,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {['Page One', 'Page Two', 'Page Three', 'Page Four'].map((text, index) => (
-            <ListItem button key={text} onClick={() => setPage(index)}>
+            <ListItem button key={text} onClick={() => handlePage(index)} >
               <ListItemIcon>{((index === 0 &&  <LocalFloristIcon/>) || (index === 1 && <MoodBadIcon/>) || (index === 2 && <SportsKabaddiIcon/>) || (index === 3 && <ChildCareIcon/>)) }</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
