@@ -1,0 +1,13 @@
+.myBody{
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.myP{
+  padding: 4em;
+  text-align: center;
+}
+.myPP{
+  float: right;
+}

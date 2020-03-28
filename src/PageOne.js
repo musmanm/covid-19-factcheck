@@ -9,10 +9,7 @@ class PageOne extends Component {
   state = {sampleState: 'hello world'};
 
   render(){
-     const { state } = this;
-     const setState = state => this.setState(state);
-
-     return <div onClick={() => setState({sampleState: 1})}>{state.sampleState}</div>;
+    return(<div/>)
   }
 }
 
