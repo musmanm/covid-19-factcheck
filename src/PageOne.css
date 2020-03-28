@@ -1,18 +1,70 @@
-.myBody{
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.myP{
-  padding: 4em;
-  text-align: center;
-}
-.myPP{
-  float: right;
+.uldiv{
+  width: 450px;
+
 }
 
-.iframeWrapper{
-  height: 100%;
-  width: 100%;
+ul {
+  list-style-type: disc;
+  text-align: left;
+  font-size: 1rem;
+  }
+
+a {
+	text-decoration: none;
 }
+
+a:hover {
+	color: #3c3c3c;
+}
+
+#wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+section {
+	padding: 60px 0;
+}
+
+section h1 {
+	margin-bottom: 10px;
+}
+
+section p {
+	margin-bottom: 30px;
+}
+
+section p:last-child {
+	margin-bottom: 0;
+}
+
+section.color {
+	background-color: #393737;
+}
+
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+
+@media all and (max-width: 600px) {
+	.container {
+		width: 100%;
+	}
+
+}
+
