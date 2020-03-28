@@ -17,6 +17,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PageOne from './PageOne.js';
 import PageTwo from './PageTwo.js';
+import PageThree from './PageThree.js';
 import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
 import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
@@ -166,7 +167,7 @@ export default function PersistentDrawerLeft() {
         <div className = {classes.pageContent} >
           {(page === 0) && <PageOne/>}
           {(page === 1) && <PageTwo/>}
-          {(page === 2) && <PageOne/>}
+          {(page === 2) && <PageThree/>}
           {(page === 3) && <PageTwo/>}
         </div>
       </main>

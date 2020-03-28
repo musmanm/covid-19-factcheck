@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: monospace;
+}
+
+body {
+  background-color: #252423;
+  position: relative;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #181818;
+  z-index: 999;
+  visibility: visible;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
+  &--hidden {
+    animation-name: hide;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+  }
+  &__loader {
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border: 8px solid #f0f0f0;
+    border-top: 8px solid #696969;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  &__txt {
+    padding: 10px;
+    color: #f0f0f0;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #f0f0f0;
+  @media screen and (max-width: 576px) {
+    display: block;
+  }
+  .statistics {
+    margin: 15px;
+    position: relative;
+    .global {
+      position: relative;
+      &__title {
+        margin: 15px 0;
+        text-transform: uppercase;
+        font-size: xx-large;
+        font-weight: bold;
+      }
+      &__cases {
+        margin: 15px 15px 0 0;
+        display: inline-block;
+        @media screen and (max-width: 576px) {
+          display: block;
+        }
+        h1 {
+          color: #eff318;
+        }
+      }
+      &__recovered {
+        margin: 15px 15px 0 0;
+        display: inline-block;
+        @media screen and (max-width: 576px) {
+          display: block;
+        }
+        h1 {
+          color: #9c9;
+        }
+      }
+      &__deaths {
+        margin: 15px 15px 0 0;
+        display: inline-block;
+        @media screen and (max-width: 576px) {
+          display: block;
+        }
+        h1 {
+          color: #fb5e53;
+        }
+      }
+    }
+    > input[type="text"] {
+      margin: 15px 0;
+      width: 200px;
+      display: inline-block;
+      background-color: #181818;
+      color: #f0f0f0;
+      padding: 9px 15px;
+      font-size: 18px;
+      border: 1px solid #696969;
+      @media screen and (max-width: 576px) {
+        display: block;
+      }
+    }
+    > .custom-select {
+      margin: 15px 0;
+      width: 200px;
+      display: inline-block;
+      background-color: #181818;
+      color: #f0f0f0;
+      padding: 9px 15px;
+      font-size: 18px;
+      border: 1px solid #696969;
+      @media screen and (max-width: 576px) {
+        display: block;
+      }
+    }
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 320px;
+      @media screen and (max-width: 576px) {
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+      }
+      > thead {
+        background-color: #181818;
+        @media screen and (max-width: 576px) {
+          display: none;
+        }
+        > tr {
+          > th {
+            text-align: left;
+            font-size: 22px;
+            &:not(:first-child) {
+              text-align: right;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 576px) {
+        td:nth-of-type(1)::before {
+          content: "Country";
+        }
+        td:nth-of-type(2)::before {
+          content: "Cases";
+        }
+        td:nth-of-type(3)::before {
+          content: "Deaths";
+        }
+        td:nth-of-type(4)::before {
+          content: "Recovered";
+        }
+      }
+      th,
+      td {
+        border: 1px solid #696969;
+        padding: 9px 15px;
+        white-space: nowrap;
+      }
+      > tbody {
+        > tr {
+          > td {
+            font-size: 18px;
+            @media screen and (max-width: 576px) {
+              position: relative;
+              text-align: right;
+              &:first-child {
+                background-color: #181818;
+                padding-left: 100px;
+                white-space: normal;
+              }
+              &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 9px 15px;
+                white-space: nowrap;
+              }
+            }
+            &:not(:first-child) {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+    .hidden {
+      display: none !important;
+    }
+  }
+  .arrow {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    &__up {
+      position: relative;
+      cursor: pointer;
+      background-color: rgba(155, 155, 155, 0.5);
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 0 25px 3px 0;
+      &::before {
+        content: "";
+        position: absolute;
+        border-top: solid 4px #f0f0f0;
+        border-right: solid 4px #f0f0f0;
+        width: 16px;
+        height: 16px;
+        left: 10px;
+        top: 14px;
+        transform: rotate(-45deg);
+      }
+    }
+    &__down {
+      position: relative;
+      cursor: pointer;
+      background-color: rgba(155, 155, 155, 0.5);
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 0 25px 25px 0;
+      &::before {
+        content: "";
+        position: absolute;
+        border-top: solid 4px #f0f0f0;
+        border-right: solid 4px #f0f0f0;
+        width: 16px;
+        height: 16px;
+        left: 10px;
+        bottom: 14px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
