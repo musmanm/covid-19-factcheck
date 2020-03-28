@@ -27,6 +27,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    minHeight: '100%'
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -82,6 +83,9 @@ const useStyles = makeStyles(theme => ({
   mystyle: {
     backgroundColor: '#212121',
   },
+  pageContent: {
+    height: '92%',
+  }
 }));
 
 export default function PersistentDrawerLeft() {
@@ -99,15 +103,10 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
   const handlePage = (index) => {
-    console.log(index);
-    if(index === 0){
-      window.location.href = 'graph.html';
-    }
-    else{
-      setPage(index);
-    }
-    setPage(index);
-    
+    // if(index === 0){
+    //   window.location.href = 'graph.html';
+    // }
+    setPage(index);    
   }
     
   return (
@@ -164,11 +163,12 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        {(page === 0) && <PageOne/>}
-        {(page === 1) && <PageTwo/>}
-        {(page === 2) && <PageOne/>}
-        {(page === 3) && <PageTwo/>}
-
+        <div className = {classes.pageContent} >
+          {(page === 0) && <PageOne/>}
+          {(page === 1) && <PageTwo/>}
+          {(page === 2) && <PageOne/>}
+          {(page === 3) && <PageTwo/>}
+        </div>
       </main>
     </div>
   );

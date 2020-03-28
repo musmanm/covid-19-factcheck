@@ -1,15 +1,20 @@
 import React, { Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './NavBar.js'
-import SideMenu from './SideMenu.js'
+import './PageOne.css';
 
 
 class PageOne extends Component {
-  state = {sampleState: 'hello world'};
+  state = {width: '1200px', height: '2100px'};  //100% & 250% was ok.
+
+  iframe = () => {
+    return {
+      __html: '<iframe scrolling="no" src="graph.html" width=' + this.state.width + ' height=' + this.state.height + '></iframe>'
+    }
+  };
 
   render(){
-    return(<div/>)
+    return (
+      <div className="iframeWrapper" dangerouslySetInnerHTML={ this.iframe() } />
+    );
   }
 }
 
