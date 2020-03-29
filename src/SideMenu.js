@@ -22,6 +22,10 @@ import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
 import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import HomeIcon from '@material-ui/icons/Home';
+
 
 const drawerWidth = 240;
 
@@ -150,9 +154,9 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {['Page One', 'Page Two', 'Page Three', 'Page Four'].map((text, index) => (
+          {['Home', 'Live Graphs', 'Detailed View'].map((text, index) => (
             <ListItem button key={text} onClick={() => handlePage(index)} >
-              <ListItemIcon>{((index === 0 &&  <LocalFloristIcon/>) || (index === 1 && <MoodBadIcon/>) || (index === 2 && <SportsKabaddiIcon/>) || (index === 3 && <ChildCareIcon/>)) }</ListItemIcon>
+              <ListItemIcon>{((index === 0 &&  <HomeIcon/>) || (index === 1 && <TrendingUpIcon/>) || (index === 2 && <AssignmentIcon/>)) }</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -168,7 +172,6 @@ export default function PersistentDrawerLeft() {
           {(page === 0) && <PageOne/>}
           {(page === 1) && <PageTwo/>}
           {(page === 2) && <PageThree/>}
-          {(page === 3) && <PageTwo/>}
         </div>
       </main>
     </div>
